@@ -11,15 +11,21 @@ with open(os.path.join(os.path.dirname(__file__), "requirements.txt")) as fp:
     install_requires = fp.read().split("\n")
 
 setup(
-    name="python_pkg",  # TODO
-    description="python package template",  # TODO
-    url="https://github.com/jackd",
+    name="numba-stream",
+    description="Numba implementations of event stream preprocessing algorithms",
+    url="https://github.com/jackd/numba-stream",
     author="Dominic Jack",
     author_email="thedomjack@gmail.com",
     license="Apache 2.0",
-    packages=["python_pkg"],  # TODO
+    packages=["numba_stream"],
     install_requires=install_requires,
     zip_safe=True,
     python_requires=">=3.6",
-    version=".".join([_MAJOR_VERSION, _MINOR_VERSION, _PATCH_VERSION,]),
+    version=".".join(
+        [
+            _MAJOR_VERSION,
+            _MINOR_VERSION,
+            _PATCH_VERSION,
+        ]
+    ),
 )
