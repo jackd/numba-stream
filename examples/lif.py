@@ -1,6 +1,6 @@
-import events_tfds.vis.anim as anim
 import numpy as np
 
+import events_tfds.vis.anim as anim
 from numba_stream import grid
 from numba_stream.lif import leaky_integrate_and_fire, spatial_leaky_integrate_and_fire
 from numba_stream.ragged import transpose_csr

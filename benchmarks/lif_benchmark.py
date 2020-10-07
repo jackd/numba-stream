@@ -1,5 +1,3 @@
-import tensorflow as tf
-
 from numba_stream import lif
 from numba_stream.benchmark_utils import BenchmarkManager
 
