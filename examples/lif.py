@@ -14,13 +14,16 @@ except ImportError as e:
     ) from e
 decay_time = 10000
 
+# save_path = None
+save_path = "/tmp/lif.gif"
+
 dataset = NMNIST().as_dataset(split="train", as_supervised=True)
 dims = np.array((34, 34), dtype=np.int64)
 kernel_size = 3
 stride = 2
 padding = 1
 
-frame_kwargs = dict(num_frames=20)
+frame_kwargs = dict(num_frames=60)
 
 for events, label in dataset:
     coords = events["coords"].numpy()
@@ -69,4 +72,7 @@ for events, label in dataset:
         img_data.append(as_frames(coords, global_times, **frame_kwargs))
     print(sizes)
 
-    anim.animate_frames_multi(*img_data, fps=4)
+    anim.animate_frames_multi(*img_data, fps=12, figsize=(10, 2), save_path=save_path)
+    if save_path is not None:
+        print(f"Saved animation to {save_path}")
+        break

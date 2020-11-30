@@ -71,7 +71,7 @@ def ravel_multi_index_transpose(indices: IntArray, dims):
         [n] int array of 1D indices.
     """
     ndim = len(dims)
-    assert indices.shape[-1] == ndim
+    # assert indices.shape[-1] == ndim
     ndim = indices.shape[1]
     acc = indices[..., -1].copy()
     stride = dims[-1].item()
